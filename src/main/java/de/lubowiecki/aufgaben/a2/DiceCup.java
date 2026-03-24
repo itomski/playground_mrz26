@@ -9,5 +9,4 @@ public class DiceCup {
     public static int roll() {
         return rand.nextInt(1, 7);
     }
-
 }
