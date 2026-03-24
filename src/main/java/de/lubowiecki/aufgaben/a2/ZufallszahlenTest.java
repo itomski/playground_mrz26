@@ -10,5 +10,4 @@ public class ZufallszahlenTest {
         System.out.println(System.getProperties());
 
     }
-
 }
