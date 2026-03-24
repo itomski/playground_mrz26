@@ -22,6 +22,18 @@ public class FloatTest {
         double bb = 0;
         System.out.println(aa / bb); // Infinity
 
+        char c = 'c';
+        c = 65000;
+        System.out.println((char)65000);
+        System.out.println((char)(c + 20));
+
+        char c1 = 65;
+        char c2 = 32;
+        System.out.println("c1 + c2 = " + c1 + c2);
+
+        var $ = 100;
+        //var _ = 20;
+
     }
 
     static void machWas(float v) {
