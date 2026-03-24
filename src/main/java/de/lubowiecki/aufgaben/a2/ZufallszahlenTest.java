@@ -7,7 +7,12 @@ public class ZufallszahlenTest {
 
     public static void main(String[] args) {
 
-        System.out.println(System.getProperties());
+        System.out.println(DiceCup.roll());
+        System.out.println(DiceCup.roll());
+        System.out.println(DiceCup.roll());
+        System.out.println(DiceCup.roll());
+        System.out.println(DiceCup.roll());
+        System.out.println(DiceCup.roll());
 
     }
 }
