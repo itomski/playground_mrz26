@@ -1,4 +1,4 @@
-package de.lubowiecki.variablen;
+package de.lubowiecki.aufgaben.a1;
 
 public class RechnerTest {
 
