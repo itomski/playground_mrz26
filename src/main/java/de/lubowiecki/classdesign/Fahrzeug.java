@@ -1,5 +1,7 @@
 package de.lubowiecki.classdesign;
 
+import java.util.Objects;
+
 public class Fahrzeug {
 
     // private Eigenschaften dürfen nur von der eigenen Klasse verwendet werden
@@ -64,5 +66,19 @@ public class Fahrzeug {
     public void setYPos(int yPos) {
         if(yPos > 0)
             this.yPos = yPos;
+    }
+
+    // hashCode und equals MÜSSEN auf gleichen Eigenschaften basieren!!!!!
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Fahrzeug fahrzeug = (Fahrzeug) o;
+        return baujahr == fahrzeug.baujahr && Objects.equals(kennzeichen, fahrzeug.kennzeichen) && Objects.equals(marke, fahrzeug.marke) && Objects.equals(modell, fahrzeug.modell);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(kennzeichen, marke, modell, baujahr);
     }
 }
