@@ -1,5 +1,7 @@
 package de.lubowiecki.vererbung;
 
+import java.lang.invoke.MethodHandles;
+
 public class InterfaceTest {
 
     public static void main(String[] args) {

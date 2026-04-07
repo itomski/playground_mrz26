@@ -11,5 +11,36 @@ public class InterfaceTest {
     Teste die Klassen.
      */
 
+    public static void main(String[] args) {
 
+        FleischfresserGehege g1 = new FleischfresserGehege();
+        g1.hinzufuegen(new Loewe("Leo"));
+        g1.hinzufuegen(new Affe("Bob"));
+        g1.hinzufuegen(new Wolf("Lupo"));
+        g1.hinzufuegen(new Affe("Charley"));
+        //g1.hinzufuegen(new Hase("Bunny"));
+
+        System.out.println(g1);
+
+        System.out.println();
+
+        PflanzenfresserGehege g2 = new PflanzenfresserGehege();
+        //g2.hinzufuegen(new Loewe("Leo"));
+        g2.hinzufuegen(new Affe("Bob"));
+        g2.hinzufuegen(new Hase("Bunny"));
+
+        System.out.println(g2);
+
+
+        System.out.println();
+
+        AllesfresserGehege g3 = new AllesfresserGehege();
+        //g2.hinzufuegen(new Loewe("Leo"));
+        g3.hinzufuegen(new Affe("Bob"));
+        //g3.hinzufuegen(new Hase("Bunny"));
+
+        System.out.println(g2);
+    }
 }
+
+
