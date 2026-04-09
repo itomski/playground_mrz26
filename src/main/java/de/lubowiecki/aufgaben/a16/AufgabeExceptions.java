@@ -1,5 +1,8 @@
 package de.lubowiecki.aufgaben.a16;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class AufgabeExceptions {
 
     /*
@@ -9,4 +12,24 @@ public class AufgabeExceptions {
     Benutze Exceptions
     */
 
+    private final static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        int eingabe = intInput("Zahleingabe");
+        System.out.println("Zahl: " + eingabe);
+    }
+
+    private static int intInput(String label) {
+        while(true) {
+            System.out.print(label + ": ");
+            try {
+                return scanner.nextInt();
+            }
+            catch (InputMismatchException e) {
+                System.out.println("Falsche Eingabe!");
+                scanner.nextLine(); // fix
+            }
+        }
+    }
 }
