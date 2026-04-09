@@ -1,25 +1,51 @@
 package de.lubowiecki.exceptions;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 public class ExceptionTest1 {
 
     public static void main(String[] args) {
 
-        String[] strArr;
 
-        // Exceptions die NICHT gefangen werden brechen die Abarbeitung der Methode ab!
+        // Unchecked: Von RuntimeException abgeleitet
         try {
-            strArr = new String[-15]; // NegativeArraySizeException
+            String[] strArr;
+
+            // Exceptions die NICHT gefangen werden brechen die Abarbeitung der Methode ab!
+            //strArr = new String[-15]; // NegativeArraySizeException
+
+            strArr = new String[10];
+            //strArr[10] = "Moin"; // ArrayIndexOutOfBoundsException
+
+            //int i = Integer.parseInt("Hallo"); // NumberFormatException
+
+            String str = null;
+            System.out.println(str.toLowerCase()); // NullPointerException
+        }
+        catch (NumberFormatException e) {
+            System.out.println("NumberFormatException");
+        }
+        catch (NullPointerException e) {
+            System.out.println("NullPointerException");
+        }
+        catch (NegativeArraySizeException e) {
+            System.out.println("NegativeArraySizeException");
+        }
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("ArrayIndexOutOfBoundsException");
         }
         catch (Exception e) {
-            System.out.println("NegativeArraySizeException");
-            //System.out.println(e.getMessage());
-            e.printStackTrace();
+            System.out.println("Eine andere Exception");
         }
 
-        System.out.println("----");
-
-        strArr = new String[10];
-        strArr[10] = "Moin";
-
+        // Checked = behandeln oder deklarieren
+        try {
+            // Exceptionbehandlung ist PFLICHT
+            var fos = new FileInputStream("data.txt");
+        }
+        catch (FileNotFoundException e) {
+            System.out.println("FileNotFoundException");
+        }
     }
 }
