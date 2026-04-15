@@ -31,6 +31,5 @@ public class MethodTest {
         System.out.println(ld.until(wm, ChronoUnit.DAYS) + " Tage bis WM");
         Period p = ld.until(wm);
         System.out.println(p);
-
     }
 }
