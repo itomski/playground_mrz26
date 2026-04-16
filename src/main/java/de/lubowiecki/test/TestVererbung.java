@@ -1,5 +1,6 @@
 package de.lubowiecki.test;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class TestVererbung {
@@ -35,8 +36,34 @@ public class TestVererbung {
         // Objekttyp: SpecialTest
         Object o = new SpecialTest(); // SpecialTest IS-A Object
 
+        // Casts
+        //Integer i1 = (Integer)"Moin";
+
+        Object o2 = "Moin"; // String IS-A Object: Upcast
+        //Integer i2 = (Integer)o2; // Downcast: ClassCastException
+        String s2 = (String)o2; // Downcast: Ok
+
+        /*
+        AA a = new AC(); // AC IS-A AA
+        //AC c = new AA(); // AA IS-NOT AC: Compiler-Error
+        AC c = (AC) new AA(); // AA IS-NOT AC (Downcast): ClassCastException zur Laufzeit
+        */
+
+        AA a = new AA();
+        AC c = (AC) a;
     }
 }
+
+// AA IS-NOT!!!! AC
+class AA {
+
+}
+
+// AC IS-A AA
+class AC extends AA {
+
+}
+
 
 interface Machbar {
 

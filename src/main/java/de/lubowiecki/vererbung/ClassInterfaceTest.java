@@ -20,11 +20,6 @@ public class ClassInterfaceTest {
         System.out.println(AxB.machWas()); // statische Methode wurde geerbt
         System.out.println(new AxB().machWasAnderes()); // Instanzmethode auch geerbt
 
-
-        //Integer i = (Integer)"Moin";
-
-
-
     }
 }
 
