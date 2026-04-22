@@ -23,7 +23,7 @@ public class TestDatatypes {
         i1 = Integer.valueOf("012", 8); // Verarbeitet Zahlensysteme
         System.out.println(i1);
 
-        i1 = Integer.parseInt("1100011", 2);
+        i1 = Integer.parseInt("1100011", 2); // Ohne redix nur Dezimal
         System.out.println(i1);
 
         int j;
