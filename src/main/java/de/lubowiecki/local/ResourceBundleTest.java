@@ -9,7 +9,7 @@ public class ResourceBundleTest {
 
     public static void main(String[] args) {
 
-        Locale.setDefault(Locale.FRENCH);
+        Locale.setDefault(Locale.JAPANESE);
         ResourceBundle bundle = ResourceBundle.getBundle("lang.gui");
 
         final Scanner scanner = new Scanner(System.in);
@@ -27,7 +27,5 @@ public class ResourceBundleTest {
 
         DecimalFormat df = new DecimalFormat("#,###.00 €");
         System.out.println(df.format(preis));
-
-
     }
 }
