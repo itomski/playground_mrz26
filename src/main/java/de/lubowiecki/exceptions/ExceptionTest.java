@@ -8,7 +8,6 @@ public class ExceptionTest {
 
     // RuntimeException (Unchecked Exceptions)
 
-        // IllegalArgumentException
         // IndexOutOfBoundsException
                 // ArrayIndexOutOfBoundsException
                 // StringIndexOutOfBoundsException
@@ -16,7 +15,8 @@ public class ExceptionTest {
         // NegativeArraySizeException
         // ClassCastException
         // ArithmeticException
-        // NumberFormatException
+        // IllegalArgumentException
+            // NumberFormatException
 
     public static void main(String[] args) {
 
@@ -28,7 +28,6 @@ public class ExceptionTest {
         catch (RuntimeException e) {
             System.out.println("Leer 2");
         }
-
     }
 
     private static String selectFirst(List<String> liste) {
