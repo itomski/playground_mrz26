@@ -5,6 +5,7 @@ import java.util.List;
 
 public class PrintGroup implements Printable {
 
+    // Loose Coupling - Verwendung von Interfaces statt konkreter Klassen
     private List<Printable> docs = new ArrayList<>();
 
     public void addDocs(Printable... docs) {

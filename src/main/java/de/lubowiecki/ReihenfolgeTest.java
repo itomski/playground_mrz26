@@ -1,5 +1,6 @@
 package de.lubowiecki;
 
+
 public class ReihenfolgeTest {
 
     // Deklaration statischer Variablen
@@ -19,6 +20,9 @@ public class ReihenfolgeTest {
     int y; // Keine Vorgabe
 
     public static void main(String[] args) {
+
+        java.util.Date d = new java.util.Date();
+
         StringBuilder sb = new StringBuilder();
 
         String str = "ABC";
