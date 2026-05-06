@@ -2,8 +2,15 @@ package de.lubowiecki.test;
 
 import de.lubowiecki.collections.Person;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoField;
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.Objects;
+import java.util.function.Predicate;
 
 // Eine Klasse kann nur eine Klasse extenden
 // Eine Klasse kann 0 oder mehrere Interfaces implementieren
@@ -122,5 +129,62 @@ public class Test4 {
                 else System.out.println("Moin2");
                 else System.out.println("Moin3");
 
+
+        Period p = Period.of(1,25,100);
+        System.out.println(p);
+        p = p.normalized();
+        System.out.println(p);
+        System.out.println(p.getYears());
+        System.out.println(p.getMonths());
+        System.out.println(p.getDays());
+        p = Period.of(0,0,100);
+        System.out.println(p);
+        p = Period.of(1,0,800);
+        System.out.println(p);
+
+        System.out.println();
+
+        // boolean test(T t);
+        Predicate<Integer> kleinerAls10 = z -> z < 10;
+        Predicate<String> startetMitT = (s3) -> s3.startsWith("T");
+
+        System.out.println(kleinerAls10.test(5));
+        System.out.println(kleinerAls10.test(7));
+        System.out.println(kleinerAls10.test(22));
+
+        System.out.println(startetMitT.test("Peter"));
+        System.out.println(startetMitT.test("Toni"));
+
+        Check sindGleich = (a2, b2) -> a2 == b2;
+        System.out.println(sindGleich.test(10, 15));
+        System.out.println(sindGleich.test(7, 7));
+
+        LocalDate ld = LocalDate.of(2000, 10, 15);
+        ld = ld.minusYears(2020);
+
+        Locale.setDefault(Locale.US);
+
+        // LocalDate: d D m M u y
+        // LocalTime: H m s
+        final DateTimeFormatter FMT1 = DateTimeFormatter.ofPattern("d. MMMM u");
+        final DateTimeFormatter FMT2 = DateTimeFormatter.ofPattern("d. MMMM y G");
+        System.out.println(ld.format(FMT1));
+        System.out.println(FMT2.format(ld));
+
+        LocalDateTime ldt = LocalDateTime.now();
+        final DateTimeFormatter FMT3 = DateTimeFormatter.ofPattern("u/M/d H:m:s");
+        System.out.println(ldt.format(FMT3));
+
+        ldt = ldt.with(ChronoField.SECOND_OF_DAY, 1);
+        System.out.println(ldt.format(FMT3));
+
     }
+}
+
+@FunctionalInterface // Ist ein SAM (Single Abstract Method)
+interface Check {
+
+    boolean test(int a, int b);
+    // boolean test(int a);
+
 }
