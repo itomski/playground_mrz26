@@ -178,6 +178,24 @@ public class Test4 {
         ldt = ldt.with(ChronoField.SECOND_OF_DAY, 1);
         System.out.println(ldt.format(FMT3));
 
+        System.out.println();
+
+        int i = 0;
+        for(;i < 10; ++i) {}
+        System.out.println(i);
+
+        Integer i1 = 10;
+        Integer i2 = 10;
+        Double d1 = 10d;
+        System.out.println(i1.equals(i2));
+        System.out.println(i1 == i2);
+        System.out.println(i1.equals(d1));
+        //System.out.println(i1 == d1); // Kompiler Error (Referenz von Double kann nie auf einen Integer zeigen!)
+        //System.out.println((Number)i1 == (Number)d1); // OK
+
+        MyException e1 = new MyException("Dies und das");
+        System.out.println(e1);
+        System.out.println(e1.toString());
     }
 }
 
@@ -187,4 +205,11 @@ interface Check {
     boolean test(int a, int b);
     // boolean test(int a);
 
+}
+
+class MyException extends Exception {
+
+    public MyException(String message) {
+        super(message);
+    }
 }
