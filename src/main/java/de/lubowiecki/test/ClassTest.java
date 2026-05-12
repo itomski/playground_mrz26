@@ -76,5 +76,9 @@ public class ClassTest {
         System.out.println((int)j2 + j3);
         System.out.println((int)(j2 + j3));
 
+        System.out.println(Math.round(0.5));
+        System.out.println(Math.round(-0.5));
+        System.out.println(Math.round(0.49));
+        System.out.println(Math.round(-0.51));
     }
 }
