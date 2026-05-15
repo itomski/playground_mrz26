@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class FutureTest {
 
     public static void main(String[] args) {
-
         final Scanner scanner = new Scanner(System.in);
 
         System.out.print("Datum: ");

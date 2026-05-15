@@ -28,6 +28,11 @@ public class Test6b {
         // Unboxing + primitive Widening ok
         //Float f1 = (float)b1 + (int)l1; // Error
 
+        Integer j = new Integer(10);
+        //String s = (String)j; // CompilerError
+        Object o = j; // Integer IS-A Object: Upcasting
+        String s = (String)o; // ClassCastException
+
         do // Bei mehr als einer Anweisung muss man klammern
             System.out.println("X"); // System.out.println();
         while(true);
